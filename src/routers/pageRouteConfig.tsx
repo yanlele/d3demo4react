@@ -19,20 +19,6 @@ const staticRotes: IStaticRoutes[] = [
     title: '主页',
     metas: [],
   },
-  {
-    path: '/count',
-    component: pages.CounterContainer,
-    exact: true,
-    title: '主页',
-    metas: [],
-  },
-  {
-    path: '',
-    component: pages.NoMatchContainer,
-    exact: true,
-    title: '主页',
-    metas: [],
-  },
 ];
 
 export default staticRotes;
