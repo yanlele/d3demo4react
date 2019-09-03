@@ -1,19 +1,22 @@
 import React, {FunctionComponent, useState} from 'react';
 import {connect} from 'react-redux';
 import {Layout, List, Card} from 'antd';
-import {withRouter } from 'react-router-dom';
-import {History} from 'history';
+import {History, Location} from 'history';
+import {parse} from 'querystring';
 
 const {Header, Content} = Layout;
 const {Item: ListItem} = List;
 
 interface HomeContainerProps {
   history: History;
+  location: Location;
 }
 
 const HomeContainer: FunctionComponent<HomeContainerProps> = (props) => {
-  const {history} = props;
-  console.log(history);
+  const {history, location} = props;
+
+  console.log(location);
+  console.log(parse(location.search));
 
   const [listRouter] = useState([
     {
@@ -32,7 +35,10 @@ const HomeContainer: FunctionComponent<HomeContainerProps> = (props) => {
           grid={{gutter: 16, column: 4}}
           dataSource={listRouter}
           renderItem={item => (
-            <ListItem>
+            <ListItem onClick={() => history.push({
+              pathname: '/select-data/',
+              search: 'name=yanle',
+            })}>
               <Card title={item.title}>Card content</Card>
             </ListItem>
           )}
@@ -42,4 +48,4 @@ const HomeContainer: FunctionComponent<HomeContainerProps> = (props) => {
   );
 };
 
-export default connect()(withRouter(HomeContainer));
+export default connect()(HomeContainer);

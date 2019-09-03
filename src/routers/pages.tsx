@@ -10,10 +10,12 @@ interface IExportPages {
   [key: string]: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>
 }
 
-const HomeContainer = () => import('pages/HomeContainer');
+const HomeContainer = () => import('../pages/HomeContainer');
+const SelectionAndData = ()=> import('../pages/SelectionAndData/SelectionAndData');
 
 const pages: IPages = {
   HomeContainer,
+  SelectionAndData,
 };
 
 // Object.keys(pages).forEach((key: string) => loadableComponent(pages[key]));

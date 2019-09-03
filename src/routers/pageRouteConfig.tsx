@@ -19,6 +19,13 @@ const staticRotes: IStaticRoutes[] = [
     title: '主页',
     metas: [],
   },
+  {
+    path: '/select-data',
+    component: pages.SelectionAndData,
+    exact: true,
+    title: '数据与选择集',
+    metas: [],
+  },
 ];
 
 export default staticRotes;
