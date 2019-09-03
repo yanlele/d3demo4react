@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/yanlele/tsx-app#readme",
   "devDependencies": {
+    "@types/d3": "^5.7.2",
     "@types/node": "^10.12.29",
     "antd": "^3.23.1",
     "autoprefixer": "^9.1.0",
@@ -59,6 +60,7 @@
     "console-control-strings": "^1.1.0",
     "css-loader": "^2.1.0",
     "cz-conventional-changelog": "^2.1.0",
+    "d3": "^5.11.0",
     "delegate": "^3.2.0",
     "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.0.0",
