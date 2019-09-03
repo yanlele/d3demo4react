@@ -1,47 +1,20 @@
-import React, {FunctionComponent, useCallback, useEffect, useState} from 'react';
+import React, {FunctionComponent} from 'react';
 import {connect} from 'react-redux';
-import {Button, Select, Input} from 'antd';
+import {Layout} from 'antd';
 
-const {Option} = Select;
-
-interface SelectItem {
-  value: string;
-  id: number;
-}
+const {Header, Content} = Layout;
 
 const HomeContainer: FunctionComponent = () => {
-  const [name, updateName] = useState<string>('');
-
-  useEffect(() => {
-    console.log(name);
-    return () => {
-      console.log('componentWillUnmount');
-    };
-  }, [name]);
-
-  const arr: SelectItem[] = [{
-    value: 'yanle',
-    id: 1,
-  }];
-
-  const handleSelectChange = useCallback((value: number) => {
-    updateName(value.toString());
-  }, []);
-
-  const handleInputChange = (e: any) => updateName(e.target.value);
-
   return (
-      <div>
-        <p>首页内容 ~ ^.^ ~</p>
-        <Button onClick={() => console.log('123')}>click</Button>
-        <Button>你好</Button>
-        <Select style={{width: '300px'}} onChange={handleSelectChange}>
-          {arr.map((item: any) => (<Option key={item.value} value={item.id}>{item.value}</Option>))}
-        </Select>
+    <Layout style={{backgroundColor: '#fff'}}>
+      <Header style={{background: '#fff'}}>
+        header
+      </Header>
 
-        <br/>
-        <Input value={name} onChange={handleInputChange}/>
-      </div>
+      <Content style={{margin: '20px'}}>
+        content
+      </Content>
+    </Layout>
   );
 };
 
