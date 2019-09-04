@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Layout, List, Card} from 'antd';
 import {History, Location} from 'history';
 import {parse} from 'querystring';
+import {Link} from 'react-router-dom';
 
 const {Header, Content} = Layout;
 const {Item: ListItem} = List;
@@ -21,6 +22,9 @@ const HomeContainer: FunctionComponent<HomeContainerProps> = (props) => {
   const [listRouter] = useState([
     {
       title: '数据与选择集',
+      routerItems: [
+        '',
+      ],
     },
   ]);
 
@@ -35,11 +39,18 @@ const HomeContainer: FunctionComponent<HomeContainerProps> = (props) => {
           grid={{gutter: 16, column: 4}}
           dataSource={listRouter}
           renderItem={item => (
-            <ListItem onClick={() => history.push({
-              pathname: '/select-data/',
-              search: 'name=yanle',
-            })}>
-              <Card title={item.title}>Card content</Card>
+            <ListItem
+              // onClick={() => history.push({
+              //   pathname: '/select-data/',
+              //   search: 'name=yanle',
+              // })}
+            >
+              <Card title={item.title}>
+                <Link to={{
+                  pathname: '/select-data/',
+                  search: 'name=yanle',
+                }}>跳转</Link>
+              </Card>
             </ListItem>
           )}
         />
