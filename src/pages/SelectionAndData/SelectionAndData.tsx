@@ -14,7 +14,7 @@ interface SelectionAndDataProps {
 const SelectionAndData: FunctionComponent<SelectionAndDataProps> = (props) => {
   const {history, location} = props;
 
-  console.log(history)
+  console.log(history);
   console.log(location);
   console.log(parse(location.search.slice(1)));
 
