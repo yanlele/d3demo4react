@@ -10,10 +10,11 @@ const SelectionAndDataComponent: FunctionComponent = () => {
   const [code, updateCode] = useState();
 
   useEffect(() => {
-    axios.get('/api/code').then(res => {
-      console.log(res.data.code);
-      updateCode(res.data.code);
-    });
+    const fetchData = async () => {
+      const axiosResponse = await axios.get('/api/code');
+      updateCode(axiosResponse.data.code);
+    };
+    fetchData();
   });
 
   return (
