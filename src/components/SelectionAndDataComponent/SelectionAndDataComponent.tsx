@@ -3,10 +3,11 @@ import {UnControlled as CodeMirror} from 'react-codemirror2';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/monokai.css';
 import 'codemirror/mode/jsx/jsx';
+import './index.css';
 
 const SelectionAndDataComponent: FunctionComponent = () => {
   return (
-    <div>
+    <div className="container">
       <CodeMirror
         value="
 const SelectionAndDataComponent: FunctionComponent = () => {
@@ -24,7 +25,8 @@ const SelectionAndDataComponent: FunctionComponent = () => {
       />
     </div>
   );
-};"
+};
+"
         options={{
           mode: 'jsx',
           theme: 'monokai',
