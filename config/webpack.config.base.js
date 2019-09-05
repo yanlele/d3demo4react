@@ -33,7 +33,7 @@ module.exports = {
                     },
                     'postcss-loader'
                 ],
-                include: paths.PATH_SRC,
+                include: [paths.PATH_SRC, paths.PATH_CODE_MIRROR_LIB],
             },
             {
                 test: /antd.*\.css/,

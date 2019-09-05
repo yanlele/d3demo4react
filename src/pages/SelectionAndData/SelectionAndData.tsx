@@ -20,9 +20,9 @@ const SelectionAndData: FunctionComponent<SelectionAndDataProps> = (props) => {
   console.log(parse(location.search.slice(1)));
 
   return (
-    <div>
+    <>
       <SelectionAndDataComponent/>
-    </div>
+    </>
   );
 };
 
