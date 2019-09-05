@@ -5,6 +5,7 @@
 import React, {FunctionComponent} from "react";
 import {History, Location} from 'history';
 import {parse} from "querystring";
+import SelectionAndDataComponent from "../../components/SelectionAndDataComponent/SelectionAndDataComponent";
 
 interface SelectionAndDataProps {
   history: History;
@@ -20,7 +21,7 @@ const SelectionAndData: FunctionComponent<SelectionAndDataProps> = (props) => {
 
   return (
     <div>
-      hello
+      <SelectionAndDataComponent/>
     </div>
   );
 };
