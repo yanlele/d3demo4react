@@ -13,17 +13,31 @@ interface HomeContainerProps {
   location: Location;
 }
 
+interface ListRouter {
+  title: string,
+  pathname: string,
+  routerItems: { name: string, search: string }[],
+}
+
 const HomeContainer: FunctionComponent<HomeContainerProps> = (props) => {
   const {history, location} = props;
 
   console.log(location);
   console.log(parse(location.search));
 
-  const [listRouter] = useState([
+  const [listRouter] = useState<ListRouter[]>([
     {
       title: '数据与选择集',
+      pathname: '/select-data/',
       routerItems: [
-        '',
+        {
+          name: 'demo1',
+          search: 'name=demo1',
+        },
+        {
+          name: 'demo2',
+          search: 'name=demo2',
+        },
       ],
     },
   ]);
@@ -46,10 +60,17 @@ const HomeContainer: FunctionComponent<HomeContainerProps> = (props) => {
               // })}
             >
               <Card title={item.title}>
-                <Link to={{
-                  pathname: '/select-data/',
-                  search: 'name=yanle',
-                }}>跳转</Link>
+                <List
+                  dataSource={item.routerItems}
+                  renderItem={listItem => (
+                    <ListItem>
+                      <Link to={{
+                        pathname: item.pathname,
+                        search: listItem.search,
+                      }}>{listItem.name}</Link>
+                    </ListItem>
+                  )}
+                />
               </Card>
             </ListItem>
           )}
