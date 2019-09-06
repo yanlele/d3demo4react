@@ -8,13 +8,13 @@ interface SelectionAndDataProps {
 }
 
 const BasePage: FunctionComponent<SelectionAndDataProps> = (props) => {
-  const {name, children} = props;
+  const {name, children, apiPrefix} = props;
   return (
       <div>
         <Row>
           <Col span={12}>
             <BaseCodeView
-                apiPrefix="class1"
+                apiPrefix={apiPrefix}
                 name={name}
             />
           </Col>

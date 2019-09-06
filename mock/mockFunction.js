@@ -11,7 +11,7 @@ const selectionAndDataDemoPaths = fse.readdirSync(selectionAndDataBasePath);
 const scaleComponentBasePath = path.resolve(componentsPath, 'ScaleComponent/Demo');
 const scaleComponentDemoFilePaths = fse.readdirSync(scaleComponentBasePath);
 
-function mockFunction(basePath, demoPaths) {
+function mockFunction(basePath, demoPaths, demoClass) {
   return demoPaths.reduce((paths, current) => {
     const match = current.match(/Demo[0-9]*/);
     if (match) {
@@ -19,7 +19,7 @@ function mockFunction(basePath, demoPaths) {
       const key = match[0].toLowerCase();
 
       Object.assign(paths, {
-        [`GET /api/class1-${key}`]: {code: fse.readFileSync(currentPath, 'utf-8')}
+        [`GET /api/${demoClass}-${key}`]: {code: fse.readFileSync(currentPath, 'utf-8')}
       });
       return paths;
     }
