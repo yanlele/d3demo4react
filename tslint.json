@@ -79,6 +79,7 @@
     "jsx-no-lambda": false,
     "jsx-no-string-ref": false,
     "jsx-boolean-value": [true, "never"],
-    "jsx-no-multiline-js": false
+    "jsx-no-multiline-js": false,
+    "jsx-self-close": false
   }
 }

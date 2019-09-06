@@ -26,6 +26,13 @@ const staticRotes: IStaticRoutes[] = [
     title: '数据与选择集',
     metas: [],
   },
+  {
+    path: '/scale',
+    component: pages.Scale,
+    exact: true,
+    title: '数据与选择集',
+    metas: [],
+  },
 ];
 
 export default staticRotes;

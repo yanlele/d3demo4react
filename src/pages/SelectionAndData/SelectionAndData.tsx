@@ -4,7 +4,9 @@
  */
 import React, {FunctionComponent} from "react";
 import {History, Location} from 'history';
+import {Row, Col} from 'antd';
 import {parse} from "querystring";
+import BaseCodeView from "../../components/BaseCodeView/BaseCodeView";
 import SelectionAndDataComponent from "../../components/SelectionAndDataComponent/SelectionAndDataComponent";
 
 interface SelectionAndDataProps {
@@ -13,16 +15,26 @@ interface SelectionAndDataProps {
 }
 
 const SelectionAndData: FunctionComponent<SelectionAndDataProps> = (props) => {
-  const {history, location} = props;
-
-  console.log(history);
-  console.log(location);
-  console.log(parse(location.search.slice(1)));
-
+  const {location} = props;
+  const pathObject = parse(location.search && location.search.slice(1));
+  const { name } = pathObject;
   return (
-    <>
-      <SelectionAndDataComponent/>
-    </>
+      <div>
+        <Row>
+          <Col span={12}>
+            <BaseCodeView
+                apiPrefix="class1"
+                name={name}
+            />
+          </Col>
+          <Col span={12}>
+            <SelectionAndDataComponent
+                name={name}
+            />
+          </Col>
+        </Row>
+
+      </div>
   );
 };
 

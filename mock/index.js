@@ -4,20 +4,8 @@
  */
 
 const path = require('path');
-const fse = require('fs-extra');
-
-const COMPONENTS = path.resolve(__dirname, '../src/components');
-
-const SelectionAndDataComponentPath = path.resolve(COMPONENTS, 'SelectionAndDataComponent/SelectionAndDataComponent.tsx');
-
-let SelectionAndDataComponentCode = fse.readFileSync(SelectionAndDataComponentPath, 'utf-8');
-
 
 module.exports = {
-  'GET /api/code': {
-    code: SelectionAndDataComponentCode
-  },
-
   'GET /api/paper': {
     data: {
       id: 11,
@@ -39,4 +27,4 @@ module.exports = {
       status: 0,
     });
   },
-}
+};

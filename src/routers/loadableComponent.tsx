@@ -28,6 +28,7 @@ const loadableComponent = (loader: any, render?: any) => {
     config.render = render;
   }
   return Loadable(config);
+
 };
 
 export default loadableComponent;

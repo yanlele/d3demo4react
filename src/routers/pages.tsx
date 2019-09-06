@@ -12,10 +12,12 @@ interface IExportPages {
 
 const HomeContainer = () => import('../pages/HomeContainer');
 const SelectionAndData = ()=> import('../pages/SelectionAndData/SelectionAndData');
+const Scale = () => import('../pages/Scale/Scale');
 
 const pages: IPages = {
   HomeContainer,
   SelectionAndData,
+  Scale,
 };
 
 // Object.keys(pages).forEach((key: string) => loadableComponent(pages[key]));
