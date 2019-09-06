@@ -1,14 +1,14 @@
 import React, {FunctionComponent, useEffect, useRef} from "react";
-import {select} from "d3-selection";
+import {scaleLinear} from "d3-scale";
 
 const ScaleComponentDemo1: FunctionComponent = () => {
   const elements = useRef(null);
 
   useEffect(() => {
-    select(elements.current)
-        .selectAll('p')
-        .datum('d3js')
-        .text((text, index) => `${text}: ${index}`);
+    const linear = scaleLinear().domain([0, 500]).range([0, 100]);
+    console.log(linear(50));            // 结果10
+    console.log(linear(250));           // 结果50
+    console.log(linear(450));           // 结果90
   });
 
   return (
