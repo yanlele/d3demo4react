@@ -67,6 +67,46 @@ export const listRouter: ListRouter[] = [
         name: 'demo6 - 分位比例尺',
         search: 'name=demo6',
       },
+      {
+        name: 'demo7 - 阈值比例尺 scaleThreshold',
+        search: 'name=demo7',
+      },
+      {
+        name: 'demo8 - 序数比例尺 scaleOrdinal 的一个简单的使用',
+        search: 'name=demo8',
+      },
+      {
+        name: 'demo9 - 对于scalePoint() 的理解',
+        search: 'name=demo9',
+      },
+      {
+        name: 'demo10 - 对于scaleBand() 的理解',
+        search: 'name=demo10',
+      },
+      {
+        name: 'demo11 - 颜色比例尺',
+        search: 'name=demo11',
+      },
+      {
+        name: 'demo12 - 颜色比例尺的使用',
+        search: 'name=demo12',
+      },
+      {
+        name: 'demo13 - 坐标轴的基本使用',
+        search: 'name=demo13',
+      },
+      {
+        name: 'demo14 - 坐标轴刻度问题',
+        search: 'name=demo14',
+      },
+      {
+        name: 'demo15 - 其他各种比例尺的坐标轴',
+        search: 'name=demo15',
+      },
+      {
+        name: 'demo16 - 散点图',
+        search: 'name=demo16',
+      },
     ],
   },
 ];
