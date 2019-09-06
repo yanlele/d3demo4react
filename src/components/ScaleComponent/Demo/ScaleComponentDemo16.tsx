@@ -22,19 +22,13 @@ const ScaleComponentDemo16: FunctionComponent = () => {
       () => [randomFrom(1, 9) / 10, randomFrom(1, 9) / 10],
     );
 
-    console.log(`<${'='.repeat(100)}>`);
-    console.log(center);
-    console.log(`<${'='.repeat(100)}>`);
-
     // x轴
-
     const xScale = scaleLinear()
     // @ts-ignore
       .domain([0, 1.2 * max(center, data => data[0])])
       .range([0, 500]);
 
     // y轴
-
     const yScale = scaleLinear()
     // @ts-ignore
       .domain([0, 1.2 * max(center, data => data[1])])
