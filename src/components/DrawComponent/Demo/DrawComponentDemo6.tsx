@@ -1,9 +1,9 @@
 import React, {FunctionComponent, useEffect, useRef} from "react";
-import {arc, DefaultArcObject} from "d3-shape";
+import {arc} from "d3-shape";
 import {select} from "d3-selection";
 import {schemeCategory10} from "d3-scale-chromatic";
 
-const DrawComponentDemo5: FunctionComponent = () => {
+const DrawComponentDemo6: FunctionComponent = () => {
   const element = useRef(null);
 
   useEffect(() => {
@@ -13,19 +13,14 @@ const DrawComponentDemo5: FunctionComponent = () => {
       .attr('width', 600);
 
     // 弧形参数
-    // 开始角度0 -> 为 12 点钟方向
-    // 角度开始增加的时候， 顺时针方向
-    const dataSet: DefaultArcObject = {
-      startAngle: 0,
-      endAngle: Math.PI * .4,
-      innerRadius: 50,
-      outerRadius: 100,
-    };
+    const arcPath = arc().innerRadius(50).outerRadius(100);
 
-    const arcPath = arc();
-
-    svg.append('path')
-      .attr('d', () => arcPath(dataSet))
+    svg.selectAll('path')
+      .data([{startAngle: 0, endAngle: Math.PI * .75}])
+      .enter()
+      .append('path')
+      // @ts-ignore
+      .attr('d', arcPath)
       .attr('transform', 'translate(250, 250)')
       .attr('stroke', schemeCategory10[0])
       .attr('stroke-width', '3px')
@@ -34,10 +29,10 @@ const DrawComponentDemo5: FunctionComponent = () => {
 
   return (
     <>
-      <h2>demo5 - 弧形成器</h2>
+      <h2>demo5 - 弧形生成器的第二种用法</h2>
       <div ref={element}></div>
     </>
   );
 };
 
-export default DrawComponentDemo5;
+export default DrawComponentDemo6;

@@ -5,6 +5,7 @@ import DrawComponentDemo2 from "./Demo/DrawComponentDemo2";
 import DrawComponentDemo3 from "./Demo/DrawComponentDemo3";
 import DrawComponentDemo4 from "./Demo/DrawComponentDemo4";
 import DrawComponentDemo5 from "./Demo/DrawComponentDemo5";
+import DrawComponentDemo6 from "./Demo/DrawComponentDemo6";
 
 const Container = styled.div`
   margin: 20px;
@@ -28,6 +29,8 @@ const DrawComponent: FunctionComponent<DrawComponentProps> = (props) => {
         return <DrawComponentDemo4/>;
       case 'demo5':
         return <DrawComponentDemo5/>;
+      case 'demo6':
+        return <DrawComponentDemo6/>;
       default:
         return <h2>Can not find component demo</h2>;
     }
