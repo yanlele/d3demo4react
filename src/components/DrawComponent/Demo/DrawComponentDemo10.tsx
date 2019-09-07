@@ -46,42 +46,40 @@ const DrawComponentDemo10: FunctionComponent = () => {
     const gdpMax = Math.max(...dataSet.map(data => max(data.gdp, (item => item[1])) || 0));
 
     // 定义比例尺
-    const xScale = scaleLinear().domain([2000, 2014]).range([0, 600 - padding.left - padding.right ]);
+    const xScale = scaleLinear()
+      .domain([2000, 2014])
+      .range([0, 600 - padding.left - padding.right]);
 
     // 定义y轴比例尺
-    const yScale = scaleLinear().domain([0, gdpMax * 1.1]).range([600 - padding.top - padding.bottom, 0]);
+    const yScale = scaleLinear()
+      .domain([0, gdpMax * 1.1])
+      .range([600 - padding.top - padding.bottom, 0]);
 
-    // 线性生成器
+    // 线性路径生成器
     const linePath = line()
-      .x(function (d) {
-        return xScale(d[0]);
-      })
-      .y(function (d) {
-        return yScale(d[1]);
-      });
+      .x(data => xScale(data[0]))
+      .y(data => yScale(data[1]));
 
-    // 添加路径
+    // 添加路径绘制
     svg.selectAll('path')
       .data(dataSet)
       .enter()
       .append('path')
       .attr('transform', `translate(${padding.left}, ${padding.top})`)
-      .attr('d', function (d) {
-        return linePath(d.gdp);
-      })
+      .attr('d', data => linePath(data.gdp))
       .attr('fill', 'none')
       .attr('stroke-width', '3px')
-      .attr('stroke', function (_, i) {
-        return schemeCategory10[i];
-      });
+      .attr('stroke', (_, index) => schemeCategory10[index]);
 
-    // x 轴
-    const xAxis = axisBottom(xScale).ticks(5).tickFormat(format('d'));
+    // x 轴生成器
+    const xAxis = axisBottom(xScale)
+      .ticks(5)
+      .tickFormat(format('d'));
 
-    // y轴
+    // y轴生成器
     const yAxis = axisLeft(yScale);
 
-    // 添加轴线
+    // 绘制轴线
     svg.append('g')
       .attr('transform', `translate(${padding.left}, ${600 - padding.bottom})`)
       .call(xAxis);
