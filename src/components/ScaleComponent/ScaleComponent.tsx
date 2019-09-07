@@ -15,11 +15,11 @@ const Container = styled.div`
   margin: 20px;
 `;
 
-interface ScaleComponentPropos {
+interface ScaleComponentProps {
   name: string | string[];
 }
 
-const ScaleComponent: FunctionComponent<ScaleComponentPropos> = (props) => {
+const ScaleComponent: FunctionComponent<ScaleComponentProps> = (props) => {
   const {name} = props;
   const functionMapCreator = (key: string | string[]) => {
     switch (key) {
