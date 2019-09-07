@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useEffect, useRef} from "react";
-import {arc} from "d3-shape";
+import {arc, DefaultArcObject} from "d3-shape";
 import {select} from "d3-selection";
 import {schemeCategory10} from "d3-scale-chromatic";
 
@@ -13,14 +13,20 @@ const DrawComponentDemo6: FunctionComponent = () => {
       .attr('width', 600);
 
     // 弧形参数
-    const arcPath = arc().innerRadius(50).outerRadius(100);
+    const arcPath = arc();
+
+    const dataset: DefaultArcObject[] = [{
+      startAngle: 0,
+      endAngle: Math.PI * .75,
+      innerRadius: 50,
+      outerRadius: 100,
+    }];
 
     svg.selectAll('path')
-      .data([{startAngle: 0, endAngle: Math.PI * .75}])
+      .data(dataset)
       .enter()
       .append('path')
-      // @ts-ignore
-      .attr('d', arcPath)
+      .attr('d', data => arcPath(data))
       .attr('transform', 'translate(250, 250)')
       .attr('stroke', schemeCategory10[0])
       .attr('stroke-width', '3px')
@@ -29,7 +35,7 @@ const DrawComponentDemo6: FunctionComponent = () => {
 
   return (
     <>
-      <h2>demo5 - 弧形生成器的第二种用法</h2>
+      <h2>demo6 - 弧形生成器的第二种用法</h2>
       <div ref={element}></div>
     </>
   );
