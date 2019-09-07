@@ -12,7 +12,7 @@ const DrawComponentDemo1: FunctionComponent = () => {
 
   return (
     <>
-      <h2>demo1 - </h2>
+      <h2>demo1 - 差值</h2>
       <p>console.log(compute(0)); --> {compute(0)}</p>
       <p>console.log(compute(.2)); --> {compute(.2)}</p>
       <p>console.log(compute(.5)); --> {compute(.5)}</p>
