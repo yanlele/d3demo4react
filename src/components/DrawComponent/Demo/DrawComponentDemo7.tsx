@@ -38,6 +38,30 @@ const DrawComponentDemo7: FunctionComponent = () => {
         outerRadius: 100,
       },
     ];
+
+    const arcPath = arc();
+
+    // 绘制图形
+    svg.selectAll('path')
+      .data(dataSet)
+      .enter()
+      .append('path')
+      .attr('d', data => arcPath(data))
+      .attr('transform', 'translate(250, 250)')
+      .attr('stroke', 'black')
+      .attr('stroke-width', '2px')
+      .attr('fill', (_, index) => schemeCategory10[index]);
+
+    // 添加文字
+    svg.selectAll('text')
+      .data(dataSet)
+      .enter()
+      .append('text')
+      .attr('transform', (data) => `translate(250, 250) translate(${arcPath.centroid(data)})`)
+      .attr('text-anchor', 'middle')
+      .attr('fill', 'white')
+      .attr('font-size', '18px')
+      .text(data => Math.floor((data.endAngle - data.startAngle) * 180 / Math.PI) + '°');
   });
 
   return (
