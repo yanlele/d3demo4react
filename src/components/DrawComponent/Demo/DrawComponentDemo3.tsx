@@ -2,7 +2,7 @@ import React, {FunctionComponent, useEffect, useRef} from "react";
 import {line} from "d3-shape";
 import {select} from "d3-selection";
 
-const DrawComponentDemo2: FunctionComponent = () => {
+const DrawComponentDemo3: FunctionComponent = () => {
   const element = useRef(null);
 
   useEffect(() => {
@@ -27,10 +27,10 @@ const DrawComponentDemo2: FunctionComponent = () => {
 
   return (
     <>
-      <h2>demo2 - 最简单的线段生成器</h2>
+      <h2>demo3 - 稍微复杂一点的线段生成器</h2>
       <div ref={element}></div>
     </>
   );
 };
 
-export default DrawComponentDemo2;
+export default DrawComponentDemo3;

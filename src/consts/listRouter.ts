@@ -122,7 +122,7 @@ export const listRouter: ListRouter[] = [
         search: 'name=demo2',
       },
       {
-        name: 'demo3 - 线段生成器',
+        name: 'demo3 - 稍微复杂一点的线段生成器',
         search: 'name=demo3',
       },
       {
