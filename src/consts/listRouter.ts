@@ -114,33 +114,49 @@ export const listRouter: ListRouter[] = [
     pathname: '/draw/',
     routerItems: [
       {
-        name: 'demo1 - 最简单的 datum 数据绑定',
+        name: 'demo1 - 差值',
         search: 'name=demo1',
       },
       {
-        name: 'demo2 - datum: 添加元素',
+        name: 'demo2 - 最简单的线段生成器',
         search: 'name=demo2',
       },
       {
-        name: 'demo3 - 绑定顺序问题',
+        name: 'demo3 - 线段生成器',
         search: 'name=demo3',
       },
       {
-        name: 'demo4 - update/enter/exit相关概念',
+        name: 'demo4 - 区域生成器 area',
         search: 'name=demo4',
       },
       {
-        name: 'demo5 - filter',
+        name: 'demo5 - 弧形成器',
         search: 'name=demo5',
       },
       {
-        name: 'demo6 - each',
+        name: 'demo6 - 弧形生成器的第二种用法',
         search: 'name=demo6',
       },
       {
-        name: 'demo7 - 绘制一个简单的柱状图',
+        name: 'demo7 - 复杂的弧形生成器示例',
         search: 'name=demo7',
       },
+      {
+        name: 'demo8 - 弦生成器： ribbon 使用方法1',
+        search: 'name=demo8',
+      },
+      {
+        name: 'demo9 - 弦生成器： ribbon 使用方法2',
+        search: 'name=demo9',
+      },
+      {
+        name: 'demo10 - 绘制折现线图',
+        search: 'name=demo10',
+      },
+      {
+        name: 'demo11 - chordDemo',
+        search: 'name=demo11',
+      },
     ],
-  }
+  },
 ];
