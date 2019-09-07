@@ -9,6 +9,7 @@ import DrawComponentDemo6 from "./Demo/DrawComponentDemo6";
 import DrawComponentDemo7 from "./Demo/DrawComponentDemo7";
 import DrawComponentDemo8 from "./Demo/DrawComponentDemo8";
 import DrawComponentDemo9 from "./Demo/DrawComponentDemo9";
+import DrawComponentDemo10 from "./Demo/DrawComponentDemo10";
 
 const Container = styled.div`
   margin: 20px;
@@ -40,6 +41,8 @@ const DrawComponent: FunctionComponent<DrawComponentProps> = (props) => {
         return <DrawComponentDemo8/>;
       case 'demo9':
         return <DrawComponentDemo9/>;
+      case 'demo10':
+        return <DrawComponentDemo10/>;
       default:
         return <h2>Can not find component demo</h2>;
     }
