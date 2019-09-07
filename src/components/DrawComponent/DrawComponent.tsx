@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from "react";
 import styled from 'styled-components';
+import DrawComponentDemo1 from "./Demo/DrawComponentDemo1";
 
 const Container = styled.div`
   margin: 20px;
@@ -14,6 +15,7 @@ const DrawComponent: FunctionComponent<DrawComponentProps> = (props) => {
   const functionMapCreator = (key: string | string[]) => {
     switch (key) {
       case 'demo1':
+        return <DrawComponentDemo1/>;
       case 'demo2':
       default:
         return <h2>Can not find component demo</h2>;
