@@ -13,11 +13,13 @@ interface IExportPages {
 const HomeContainer = () => import('../pages/HomeContainer');
 const SelectionAndData = ()=> import('../pages/SelectionAndData/SelectionAndData');
 const Scale = () => import('../pages/Scale/Scale');
+const Draw = () => import('../pages/Draw/Draw');
 
 const pages: IPages = {
   HomeContainer,
   SelectionAndData,
   Scale,
+  Draw,
 };
 
 // Object.keys(pages).forEach((key: string) => loadableComponent(pages[key]));

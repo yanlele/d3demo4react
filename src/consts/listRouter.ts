@@ -109,4 +109,38 @@ export const listRouter: ListRouter[] = [
       },
     ],
   },
+  {
+    title: '第三节：绘制',
+    pathname: '/draw/',
+    routerItems: [
+      {
+        name: 'demo1 - 最简单的 datum 数据绑定',
+        search: 'name=demo1',
+      },
+      {
+        name: 'demo2 - datum: 添加元素',
+        search: 'name=demo2',
+      },
+      {
+        name: 'demo3 - 绑定顺序问题',
+        search: 'name=demo3',
+      },
+      {
+        name: 'demo4 - update/enter/exit相关概念',
+        search: 'name=demo4',
+      },
+      {
+        name: 'demo5 - filter',
+        search: 'name=demo5',
+      },
+      {
+        name: 'demo6 - each',
+        search: 'name=demo6',
+      },
+      {
+        name: 'demo7 - 绘制一个简单的柱状图',
+        search: 'name=demo7',
+      },
+    ],
+  }
 ];

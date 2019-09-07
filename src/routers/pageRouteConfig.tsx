@@ -33,6 +33,13 @@ const staticRotes: IStaticRoutes[] = [
     title: '数据与选择集',
     metas: [],
   },
+  {
+    path: '/draw',
+    component: pages.Draw,
+    exact: true,
+    title: '绘制',
+    metas: [],
+  },
 ];
 
 export default staticRotes;
