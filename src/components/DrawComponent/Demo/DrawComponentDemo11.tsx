@@ -17,10 +17,13 @@ const DrawComponentDemo11: FunctionComponent = () => {
   const element = useRef(null);
 
   useEffect(() => {
+    const width = 600;                         // 获取svg元素的宽度
+    const height = 600;                        //  获取svg元素的高度
+
     const svg = select(element.current)
       .append('svg')
-      .attr('height', 600)
-      .attr('width', 600);
+      .attr('height', width)
+      .attr('width', height);
 
     // 数据的矩阵
     const matrix: number[][] = [
@@ -29,8 +32,6 @@ const DrawComponentDemo11: FunctionComponent = () => {
       [8010, 16145, 8090, 8045],
       [1013, 990, 940, 6907],
     ];
-    const width = 600;                         // 获取svg元素的宽度
-    const height = 600;                        //  获取svg元素的高度
 
     // 计算外半径尺寸，这里取svg画布的宽、高的最小值的一半，减去40，表示两边留有余地；
     const outerRadius = Math.min(width, height) * 0.5 - 40;
@@ -107,21 +108,31 @@ const DrawComponentDemo11: FunctionComponent = () => {
     // 定义刻度线上的文字
     groupTick
     // 不能被5整除的数字不显示
-      .filter(function(d) { return d.value % 5e3 === 0; })
+      .filter(function (d) {
+        return d.value % 5e3 === 0;
+      })
       .append("text")
       .attr("x", 8)
       .attr("dy", ".35em")
-      .attr("transform", function(d) { return d.angle > Math.PI ? "rotate(180) translate(-16)" : null; })
-      .style("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
-      .text(function(d) { return formatValue(d.value); });
+      .attr("transform", function (d) {
+        return d.angle > Math.PI ? "rotate(180) translate(-16)" : null;
+      })
+      .style("text-anchor", function (d) {
+        return d.angle > Math.PI ? "end" : null;
+      })
+      .text(function (d) {
+        return formatValue(d.value);
+      });
 
     // 给之前定义的g这个元素添加样式并绑定数据用来画弦图的弦。
     g.append("g")
       .style('fill-opacity', '0.67')
       .selectAll("path")
-      .data(function(chords) { return chords; })
+      .data(function (chords) {
+        return chords;
+      })
       .enter().append("path")
-      // @ts-ignore
+    // @ts-ignore
       .attr("d", ribbonMain)
       // 弦的填充色是目标点的索引值确定的
       .style("fill", (data: any) => GetColor[data.target.index])
