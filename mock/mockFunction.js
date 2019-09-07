@@ -11,6 +11,10 @@ const selectionAndDataDemoPaths = fse.readdirSync(selectionAndDataBasePath);
 const scaleComponentBasePath = path.resolve(componentsPath, 'ScaleComponent/Demo');
 const scaleComponentDemoFilePaths = fse.readdirSync(scaleComponentBasePath);
 
+// class3
+const drawComponentBasePath = path.resolve(componentsPath, 'DrawComponent/Demo');
+const drawComponentDemoFilePaths = fse.readdirSync(drawComponentBasePath);
+
 function mockFunction(basePath, demoPaths, demoClass) {
   return demoPaths.reduce((paths, current) => {
     const match = current.match(/Demo[0-9]*/);
@@ -33,4 +37,7 @@ module.exports.scaleComponentDemoFilePaths = scaleComponentDemoFilePaths;
 
 module.exports.selectionAndDataBasePath = selectionAndDataBasePath;
 module.exports.selectionAndDataDemoPaths = selectionAndDataDemoPaths;
+
+module.exports.drawComponentBasePath = drawComponentBasePath;
+module.exports.drawComponentDemoFilePaths = drawComponentDemoFilePaths;
 

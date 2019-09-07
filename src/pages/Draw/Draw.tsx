@@ -2,7 +2,7 @@ import React, {FunctionComponent} from "react";
 import BasePage from "../../components/BasePage/BasePage";
 import {parse} from "querystring";
 import {Location} from "history";
-import ScaleComponent from "../../components/ScaleComponent/ScaleComponent";
+import DrawComponent from "../../components/DrawComponent/DrawComponent";
 
 interface DrawProps {
   location: Location;
@@ -16,9 +16,9 @@ const Draw: FunctionComponent<DrawProps> = (props) => {
     <div>
       <BasePage
         name={name}
-        apiPrefix="class2"
+        apiPrefix="class3"
       >
-        <ScaleComponent
+        <DrawComponent
           name={name}
         />
       </BasePage>
