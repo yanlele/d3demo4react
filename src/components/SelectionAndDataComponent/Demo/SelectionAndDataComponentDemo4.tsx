@@ -19,7 +19,7 @@ const SelectionAndDataComponentDemo4: FunctionComponent = () => {
         .text(text => text);
 
     exit.remove();
-  });
+  }, []);
 
   return (
       <>

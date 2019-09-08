@@ -9,7 +9,7 @@ const SelectionAndDataComponentDemo1: FunctionComponent = () => {
         .selectAll('p')
         .datum('d3js')
         .text((text, index) => `${text}: ${index}`);
-  });
+  }, []);
 
   return (
       <>

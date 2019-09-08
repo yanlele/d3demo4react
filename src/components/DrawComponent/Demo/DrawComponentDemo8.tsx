@@ -35,7 +35,7 @@ const DrawComponentDemo8: FunctionComponent = () => {
       .attr('fill', schemeCategory10[1])
       .attr('stroke', schemeCategory10[0])
       .attr('stroke-width', '2px');
-  });
+  }, []);
 
   return (
     <>

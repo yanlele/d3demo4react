@@ -15,7 +15,7 @@ const SelectionAndDataComponentDemo5: FunctionComponent = () => {
     enter.append('p')
         .filter(text => text > 10)
         .text(text => text);
-  });
+  }, []);
 
   return (
       <>

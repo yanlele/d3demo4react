@@ -22,7 +22,7 @@ const ScaleComponentDemo13: FunctionComponent = () => {
       .attr('transform', 'translate(80, 80)');
 
     gAxis.call(axis);
-  });
+  }, []);
 
   return (
     <>

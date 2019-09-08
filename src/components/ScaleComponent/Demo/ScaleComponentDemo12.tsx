@@ -23,7 +23,7 @@ const ScaleComponentDemo12: FunctionComponent = () => {
       .attr('cy', 100)
       .attr('r', 30)
       .attr('fill', (_, index) => color[index]);
-  });
+  }, []);
 
   return (
     <>

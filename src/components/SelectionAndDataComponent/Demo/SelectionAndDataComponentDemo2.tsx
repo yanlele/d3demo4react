@@ -10,7 +10,7 @@ const SelectionAndDataComponentDemo2: FunctionComponent = () => {
         .text((text, index) => `${text}: ${index}`)
         .append('span')
         .text((text)=> ` - span ${text}`);
-  });
+  }, []);
 
   return (
       <>

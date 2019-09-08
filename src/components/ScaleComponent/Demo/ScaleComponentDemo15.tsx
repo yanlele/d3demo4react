@@ -35,7 +35,7 @@ const ScaleComponentDemo15: FunctionComponent = () => {
     linearBottom.call(linearBottomAxis);
     powBottom.call(powBottomAxis);
     logBottom.call(logBottomAxis);
-  });
+  }, []);
 
   return (
     <>

@@ -31,7 +31,7 @@ const ScaleComponentDemo2: FunctionComponent = () => {
 
     const ticksFormatResult = ticks.map( (item) => tickFormat(item));
     console.log(ticksFormatResult);   // ["-2e+1", "-1e+1", "+0", "+1e+1", "+2e+1"]
-  });
+  }, []);
 
   return (
       <>

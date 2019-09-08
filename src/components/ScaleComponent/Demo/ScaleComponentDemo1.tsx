@@ -9,7 +9,7 @@ const ScaleComponentDemo1: FunctionComponent = () => {
     console.log(linear(50));            // 结果10
     console.log(linear(250));           // 结果50
     console.log(linear(450));           // 结果90
-  });
+  }, []);
 
   return (
       <>

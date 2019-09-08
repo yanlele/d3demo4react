@@ -39,7 +39,7 @@ const ScaleComponentDemo14: FunctionComponent = () => {
     lAxis2.call(leftAxis2);
     rAxis.call(rightAxis);
     rAxis2.call(rightAxis2);
-  });
+  }, []);
 
   return (
     <>

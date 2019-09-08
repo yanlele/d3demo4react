@@ -23,11 +23,9 @@ const SelectionAndDataComponentDemo3: FunctionComponent = () => {
     const update = nodes.selectAll('p').data(person);
     const enter = update.enter();
     enter.append('p')
-        .sort((a, b) => {
-          return b.id - a.id;
-        })
+        .sort((a, b) => b.id - a.id)
         .text((data) => `${data.id}: ${data.name}`);
-  });
+  }, []);
 
   return (
       <>

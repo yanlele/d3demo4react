@@ -10,7 +10,7 @@ const ScaleComponentDemo4: FunctionComponent = () => {
     console.log(quantize(3));
     console.log(quantize(5.99));
     console.log(quantize(6));
-  });
+  }, []);
 
   return (
     <>

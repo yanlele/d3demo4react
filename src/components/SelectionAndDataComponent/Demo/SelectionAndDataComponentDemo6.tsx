@@ -22,7 +22,7 @@ const SelectionAndDataComponentDemo6: FunctionComponent = () => {
     enter.append('p')
         .each((data, index) => data.age = index * 12)
         .text(data =>`${data.id} : ${data.name} - ${data.age}`);
-  });
+  }, []);
 
   return (
       <>

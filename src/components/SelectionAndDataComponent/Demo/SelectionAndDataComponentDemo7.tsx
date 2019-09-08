@@ -59,7 +59,7 @@ const SelectionAndDataComponentDemo7: FunctionComponent = () => {
         .attr('dy', '1em')
         .text(data => data);
 
-  });
+  }, []);
 
   return (
       <>

@@ -23,7 +23,7 @@ const DrawComponentDemo2: FunctionComponent = () => {
       .attr('stroke', 'black')
       .attr('stroke-width', '3px')
       .attr('fill', 'none');
-  });
+  }, []);
 
   return (
     <>

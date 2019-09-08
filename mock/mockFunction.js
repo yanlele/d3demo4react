@@ -23,7 +23,7 @@ function mockFunction(basePath, demoPaths, demoClass) {
       const key = match[0].toLowerCase();
 
       Object.assign(paths, {
-        [`GET /api/${demoClass}-${key}`]: {code: fse.readFileSync(currentPath, 'utf-8')}
+        [`GET /api/${demoClass}-${key}/`]: {code: fse.readFileSync(currentPath, 'utf-8')}
       });
       return paths;
     }

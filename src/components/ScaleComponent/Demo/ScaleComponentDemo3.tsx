@@ -26,7 +26,7 @@ const ScaleComponentDemo3: FunctionComponent = () => {
         .domain([0, 3])
         .range([0, 90]);
     console.log(pow(1.5));           // 11.25
-  });
+  }, []);
 
   return (
       <>

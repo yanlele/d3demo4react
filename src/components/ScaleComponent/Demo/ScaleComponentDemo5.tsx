@@ -27,7 +27,7 @@ const ScaleComponentDemo5: FunctionComponent = () => {
       .attr('cy', 50)
       .attr('r', data => data)
       .attr('fill', data => getColorCode(quantize(data)));
-  });
+  }, []);
 
   return (
     <>

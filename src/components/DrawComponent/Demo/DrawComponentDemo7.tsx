@@ -62,7 +62,7 @@ const DrawComponentDemo7: FunctionComponent = () => {
       .attr('fill', 'white')
       .attr('font-size', '18px')
       .text(data => Math.floor((data.endAngle - data.startAngle) * 180 / Math.PI) + '°');
-  });
+  }, []);
 
   return (
     <>

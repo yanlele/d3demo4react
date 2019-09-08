@@ -63,7 +63,7 @@ const ScaleComponentDemo16: FunctionComponent = () => {
       .attr('transform', `translate(${padding.left}, ${600 - padding.bottom - 500})`);
     linearBottom.call(bottomAxis);
     linearLeft.call(leftAxis);
-  });
+  }, []);
 
   return (
     <>

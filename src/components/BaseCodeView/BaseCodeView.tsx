@@ -17,11 +17,11 @@ const BaseCodeView: FunctionComponent<BaseCodeViewProps> = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`/api/${apiPrefix}-${name}`);
+      const response = await axios.get(`/api/${apiPrefix}-${name}/`);
       updateCode(response.data.code);
     };
     fetchData();
-  });
+  }, []);
 
   return (
 

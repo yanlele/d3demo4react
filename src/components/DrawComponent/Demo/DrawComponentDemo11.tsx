@@ -137,7 +137,7 @@ const DrawComponentDemo11: FunctionComponent = () => {
       // 弦的填充色是目标点的索引值确定的
       .style("fill", (data: any) => GetColor[data.target.index])
       .style("stroke", (d: any) => rgb(GetColor[d.target.index]).darker());
-  });
+  }, []);
 
   const groupTicks = (d: ChordGroup, step: number) => {
     // k表示单位弧度

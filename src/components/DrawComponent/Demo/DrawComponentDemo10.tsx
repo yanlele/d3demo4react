@@ -86,7 +86,7 @@ const DrawComponentDemo10: FunctionComponent = () => {
     svg.append('g')
       .attr('transform', `translate(${padding.left}, ${padding.top})`)
       .call(yAxis);
-  });
+  }, []);
 
   return (
     <>
