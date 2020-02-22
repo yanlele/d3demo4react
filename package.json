@@ -37,6 +37,7 @@
   "homepage": "https://github.com/yanlele/tsx-app#readme",
   "devDependencies": {
     "@types/d3": "^5.7.2",
+    "@types/fs-extra": "^8.1.0",
     "@types/node": "^10.12.29",
     "@types/styled-components": "^4.1.18",
     "antd": "^3.23.1",

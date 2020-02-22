@@ -10,21 +10,21 @@ interface SelectionAndDataProps {
 const BasePage: FunctionComponent<SelectionAndDataProps> = (props) => {
   const {name, children, apiPrefix} = props;
   return (
-      <div>
-        <Row>
-          <Col span={12}>
-            <BaseCodeView
-                apiPrefix={apiPrefix}
-                name={name}
-            />
-          </Col>
+    <div>
+      <Row>
+        <Col span={12}>
+          <BaseCodeView
+            apiPrefix={apiPrefix}
+            name={name}
+          />
+        </Col>
 
-          <Col span={12}>
-            {children}
-          </Col>
-        </Row>
+        <Col span={12}>
+          {children}
+        </Col>
+      </Row>
 
-      </div>
+    </div>
   );
 };
 

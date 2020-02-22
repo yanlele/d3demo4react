@@ -25,16 +25,16 @@ const BaseCodeView: FunctionComponent<BaseCodeViewProps> = (props) => {
 
   return (
 
-      <div className="code-mirror-container">
-        <CodeMirror
-            value={code}
-            options={{
-              mode: 'jsx',
-              theme: 'monokai',
-              lineNumbers: true,
-            }}
-        />
-      </div>
+    <div className="code-mirror-container">
+      <CodeMirror
+        value={code}
+        options={{
+          mode: 'jsx',
+          theme: 'monokai',
+          lineNumbers: true,
+        }}
+      />
+    </div>
   );
 };
 
